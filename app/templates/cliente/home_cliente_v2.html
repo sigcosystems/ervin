@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>ServiPlus - Servicios técnicos profesionales</title>
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/home_cliente_v2.css">
+</head>
+<body class="light-theme">
+    
+    <!-- Header Transparente con Glassmorphism -->
+    <header class="header-glass">
+        <div class="header-wrapper">
+            <div class="logo-group">
+                <div class="logo-mark">S+</div>
+                <span class="logo-name">ServiPlus</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-notification" onclick="abrirNotificaciones()">
+                    <span class="notif-icon">🔔</span>
+                    <span class="notif-badge">3</span>
+                </button>
+                <div class="avatar-menu" onclick="abrirPerfil()">
+                    <span>JD</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Clean & Bold -->
+    <section class="hero-clean">
+        <div class="hero-container">
+            <div class="hero-content-left">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-badge">🚀 Nuevo en Lima</span>
+                </div>
+                
+                <h1 class="hero-headline">
+                    Tu servicio<br>
+                    <span class="headline-emphasis">donde lo necesites</span>
+                </h1>
+                
+                <p class="hero-lead">
+                    Conectamos a los mejores técnicos y profesionales<br>
+                    con quienes necesitan sus servicios. Rápido, seguro y confiable.
+                </p>
+                
+                <div class="hero-cta-group">
+                    <button class="btn-primary-large" onclick="scrollToServices()">
+                        Solicitar servicio
+                    </button>
+                    <button class="btn-secondary-outline" onclick="verDemo()">
+                        <span class="play-icon">▶</span>
+                        Ver cómo funciona
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-mini">
+                        <strong>2,500+</strong>
+                        <span>Servicios realizados</span>
+                    </div>
+                    <div class="stat-mini">
+                        <strong>150+</strong>
+                        <span>Técnicos activos</span>
+                    </div>
+                    <div class="stat-mini">
+                        <strong>4.9/5</strong>
+                        <span>Calificación promedio</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Mockup de teléfono con la app -->
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="app-preview">
+                                <div class="preview-header">
+                                    <div class="status-bar"></div>
+                                    <h3>Servicios disponibles</h3>
+                                </div>
+                                <div class="preview-services">
+                                    <div class="mini-card" style="--delay: 0s;">
+                                        <span class="mini-icon">🚗</span>
+                                        <span class="mini-name">Cambio aceite</span>
+                                    </div>
+                                    <div class="mini-card" style="--delay: 0.1s;">
+                                        <span class="mini-icon">⚡</span>
+                                        <span class="mini-name">Electricidad</span>
+                                    </div>
+                                    <div class="mini-card" style="--delay: 0.2s;">
+                                        <span class="mini-icon">🔧</span>
+                                        <span class="mini-name">Gasfitería</span>
+                                    </div>
+                                    <div class="mini-card" style="--delay: 0.3s;">
+                                        <span class="mini-icon">📺</span>
+                                        <span class="mini-name">Electrodomésticos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Elementos flotantes decorativos -->
+                <div class="floating-element" style="--x: -20px; --y: -30px; --delay: 0s;">
+                    <div class="float-card">
+                        <span class="float-icon">✓</span>
+                        <span class="float-text">Verificado</span>
+                    </div>
+                </div>
+                
+                <div class="floating-element" style="--x: 280px; --y: 50px; --delay: 1s;">
+                    <div class="float-card">
+                        <span class="float-icon">⚡</span>
+                        <span class="float-text">Rápido</span>
+                    </div>
+                </div>
+                
+                <div class="floating-element" style="--x: 250px; --y: 350px; --delay: 2s;">
+                    <div class="float-card">
+                        <span class="float-icon">🛡️</span>
+                        <span class="float-text">Seguro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-hint" onclick="scrollToServices()">
+            <span class="scroll-line"></span>
+            <span class="scroll-text">Explorar</span>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="container-wide">
+            <div class="section-intro">
+                <span class="section-label">Proceso simple</span>
+                <h2 class="section-title">En 3 pasos simples</h2>
+                <p class="section-description">
+                    Resolvemos tu problema en minutos, no en horas
+                </p>
+            </div>
+            
+            <div class="steps-visual">
+                <div class="step-card" data-step="1">
+                    <div class="step-visual">
+                        <div class="step-number">01</div>
+                        <div class="step-graphic">
+                            <div class="graphic-circle">
+                                <span class="graphic-icon">📱</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Solicita</h3>
+                    <p class="step-desc">Elige el servicio, fecha y ubicación en segundos</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step-card" data-step="2">
+                    <div class="step-visual">
+                        <div class="step-number">02</div>
+                        <div class="step-graphic">
+                            <div class="graphic-circle">
+                                <span class="graphic-icon">🔍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Conectamos</h3>
+                    <p class="step-desc">Te asignamos el técnico verificado más cercano</p>
+                </div>
+                
+                <div class="step-arrow">→</div>
+                
+                <div class="step-card" data-step="3">
+                    <div class="step-visual">
+                        <div class="step-number">03</div>
+                        <div class="step-graphic">
+                            <div class="graphic-circle">
+                                <span class="graphic-icon">✅</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="step-title">Listo</h3>
+                    <p class="step-desc">Servicio profesional garantizado en tu puerta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios con Cards Premium -->
+    <section class="services-premium" id="servicios">
+        <div class="container-wide">
+            <div class="section-intro">
+                <span class="section-label">Nuestros servicios</span>
+                <h2 class="section-title">Todo lo que necesitas</h2>
+            </div>
+            
+            <div class="services-grid-premium">
+                <!-- Servicio 1 -->
+                <article class="service-card-premium" onclick="irAServicio('aceite')">
+                    <div class="service-image" style="background: linear-gradient(135deg, #FFCD11 0%, #FFA500 100%);">
+                        <span class="service-emoji">🚗</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-header">
+                            <h3>Cambio de aceite</h3>
+                            <span class="service-price">Desde S/50</span>
+                        </div>
+                        <p class="service-description">
+                            Servicio móvil con productos de calidad incluidos
+                        </p>
+                        <div class="service-features-list">
+                            <span class="feature-pill">🏠 A domicilio</span>
+                            <span class="feature-pill">⏱️ 30-45 min</span>
+                            <span class="feature-pill">✅ Filtro incluido</span>
+                        </div>
+                        <button class="btn-service-action">
+                            Solicitar ahora
+                            <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Servicio 2 -->
+                <article class="service-card-premium" onclick="irAServicio('electricidad')">
+                    <div class="service-image" style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);">
+                        <span class="service-emoji">⚡</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-header">
+                            <h3>Electricidad</h3>
+                            <span class="service-price">Desde S/80</span>
+                        </div>
+                        <p class="service-description">
+                            Instalaciones y reparaciones eléctricas certificadas
+                        </p>
+                        <div class="service-features-list">
+                            <span class="feature-pill">🔌 Todo hogar</span>
+                            <span class="feature-pill">📋 Diagnóstico</span>
+                            <span class="feature-pill">🎓 Certificado</span>
+                        </div>
+                        <button class="btn-service-action">
+                            Solicitar ahora
+                            <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Servicio 3 -->
+                <article class="service-card-premium" onclick="irAServicio('gasfiteria')">
+                    <div class="service-image" style="background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);">
+                        <span class="service-emoji">🔧</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-header">
+                            <h3>Gasfitería</h3>
+                            <span class="service-price">Desde S/70</span>
+                        </div>
+                        <p class="service-description">
+                            Reparaciones de agua y desagüe, urgencias 24/7
+                        </p>
+                        <div class="service-features-list">
+                            <span class="feature-pill">💧 Urgencias</span>
+                            <span class="feature-pill">🛠️ Herramientas</span>
+                            <span class="feature-pill">✓ Garantía</span>
+                        </div>
+                        <button class="btn-service-action">
+                            Solicitar ahora
+                            <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Servicio 4 -->
+                <article class="service-card-premium" onclick="irAServicio('electrodomesticos')">
+                    <div class="service-image" style="background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);">
+                        <span class="service-emoji">📺</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-header">
+                            <h3>Electrodomésticos</h3>
+                            <span class="service-price">Desde S/90</span>
+                        </div>
+                        <p class="service-description">
+                            Reparación especializada de todo tipo de artefactos
+                        </p>
+                        <div class="service-features-list">
+                            <span class="feature-pill">🔧 Expertos</span>
+                            <span class="feature-pill">📦 Repuestos</span>
+                            <span class="feature-pill">🛡️ 30 días</span>
+                        </div>
+                        <button class="btn-service-action">
+                            Solicitar ahora
+                            <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Elegantes -->
+    <section class="testimonials-clean" id="testimonios">
+        <div class="container-narrow">
+            <div class="section-intro">
+                <span class="section-label">Testimonios</span>
+                <h2 class="section-title">Clientes satisfechos</h2>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-quote">
+                        <p class="quote-text">
+                            "Increíble servicio. El mecánico llegó puntual, cambió el aceite en 40 minutos y dejó todo impecable. La app es super fácil de usar."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="/static/img/avatars/maria.jpg" alt="María López" onerror="this.style.display='none'">
+                            <span class="avatar-fallback">ML</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">María López</h4>
+                            <p class="author-detail">San Isidro • Cambio de aceite</p>
+                            <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-quote">
+                        <p class="quote-text">
+                            "Resolvieron mi problema eléctrico en menos de 2 horas. El técnico era muy profesional y explicó todo lo que hizo. Totalmente recomendado."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span class="avatar-fallback">CR</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Carlos Ruiz</h4>
+                            <p class="author-detail">Miraflores • Electricidad</p>
+                            <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-quote">
+                        <p class="quote-text">
+                            "La lavadora dejó de funcionar y en 24 horas ya tenían un técnico en mi casa. La repararon el mismo día. Excelente experiencia."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span class="avatar-fallback">AF</span>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Ana Fernández</h4>
+                            <p class="author-detail">Surco • Electrodomésticos</p>
+                            <div class="author-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn" onclick="prevTestimonial()">←</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToTestimonial(0)"></span>
+                    <span class="dot" onclick="goToTestimonial(1)"></span>
+                    <span class="dot" onclick="goToTestimonial(2)"></span>
+                </div>
+                <button class="carousel-btn" onclick="nextTestimonial()">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="why-us">
+        <div class="container-wide">
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">✅</div>
+                    <h3>Verificados</h3>
+                    <p>Todos los técnicos pasan verificación de antecedentes</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">⚡</div>
+                    <h3>Rápidos</h3>
+                    <p>Respuesta en minutos, servicio el mismo día</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Garantía</h3>
+                    <p>30 días de garantía en todos nuestros servicios</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">💳</div>
+                    <h3>Pago seguro</h3>
+                    <p>Múltiples métodos de pago, 100% protegidos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para empezar?</h2>
+            <p class="cta-text">Únete a miles de personas que ya confían en ServiPlus</p>
+            <button class="btn-cta-large" onclick="scrollToServices()">
+                Solicitar servicio ahora
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="footer-simple">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/politicas/garantias">Garantías</a>
+                <a href="/politicas/devoluciones">Devoluciones</a>
+                <a href="/terminos">Términos</a>
+                <a href="/privacidad">Privacidad</a>
+                <a href="/ayuda">Ayuda</a>
+            </div>
+            <p class="footer-copy">© 2025 ServiPlus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav-clean">
+        <a href="/cliente/home" class="nav-item-clean active">
+            <span class="nav-icon-clean">🏠</span>
+            <span class="nav-label-clean">Inicio</span>
+        </a>
+        <a href="/cliente/servicios" class="nav-item-clean">
+            <span class="nav-icon-clean">🛠️</span>
+            <span class="nav-label-clean">Servicios</span>
+        </a>
+        <a href="/cliente/historial" class="nav-item-clean">
+            <span class="nav-icon-clean">📋</span>
+            <span class="nav-label-clean">Historial</span>
+        </a>
+        <a href="/cliente/perfil" class="nav-item-clean">
+            <span class="nav-icon-clean">👤</span>
+            <span class="nav-label-clean">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/home_cliente_v2.js"></script>
+</body>
+</html>

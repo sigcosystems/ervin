@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiPlus - Panel Técnico</title>
+    <link rel="stylesheet" href="panel_tecnico.css">
+</head>
+<body>
+    <header class="header-tecnico">
+        <img src="img/logo_serviplus.svg" alt="ServiPlus" class="logo-small">
+        <div class="status-toggle">
+            <label class="switch">
+                <input type="checkbox" id="disponible" onchange="cambiarDisponibilidad()">
+                <span class="slider"></span>
+            </label>
+            <span id="statusText">Desconectado</span>
+        </div>
+    </header>
+
+    <main class="main-tecnico">
+        <section class="stats-row">
+            <div class="stat-card">
+                <p class="stat-label">Servicios hoy</p>
+                <p class="stat-value">3</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Ganancia semanal</p>
+                <p class="stat-value">S/450</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-label">Calificación</p>
+                <p class="stat-value">4.8 ⭐</p>
+            </div>
+        </section>
+
+        <section class="solicitudes-section">
+            <h2>Solicitudes disponibles</h2>
+            
+            <div id="listaSolicitudes">
+                <!-- Se actualizará vía HTMX/WebSocket -->
+                <p class="empty-state">No hay solicitudes en este momento</p>
+            </div>
+        </section>
+
+        <section class="mis-servicios">
+            <h2>Mis servicios programados</h2>
+            
+            <div class="servicio-item">
+                <div class="servicio-header">
+                    <span class="servicio-tipo">Cambio de aceite</span>
+                    <span class="servicio-hora">10:00 AM</span>
+                </div>
+                <div class="servicio-body">
+                    <p><strong>Cliente:</strong> María López</p>
+                    <p><strong>Dirección:</strong> Av. Arequipa 2450, Lince</p>
+                    <p><strong>Vehículo:</strong> Toyota Corolla 2018</p>
+                </div>
+                <div class="servicio-actions">
+                    <button class="btn-outline" onclick="verDetalles(1)">Ver detalles</button>
+                    <button class="btn-primary" onclick="iniciarServicio(1)">Iniciar servicio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de nueva solicitud -->
+    <div id="modalSolicitud" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nueva solicitud de servicio</h3>
+                <div class="countdown-timer">
+                    <span id="countdown">15</span>s
+                </div>
+            </div>
+            
+            <div class="solicitud-detalle">
+                <div class="detalle-item">
+                    <strong>Servicio:</strong> Cambio de aceite
+                </div>
+                <div class="detalle-item">
+                    <strong>Ubicación:</strong> Jr. Los Cedros 123, San Isidro
+                </div>
+                <div class="detalle-item">
+                    <strong>Horario:</strong> Sábado 15 Nov, 10:00 AM
+                </div>
+                <div class="detalle-item">
+                    <strong>Pago estimado:</strong> S/80
+                </div>
+                <div class="mapa-preview">
+                    <img src="img/map_preview.png" alt="Mapa">
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="rechazarSolicitud()">Rechazar</button>
+                <button class="btn-primary btn-large" onclick="aceptarSolicitud()">
+                    Aceptar servicio
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="/tecnico/home" class="nav-item active">
+            <img src="img/icon_home.svg" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/tecnico/historial" class="nav-item">
+            <img src="img/icon_history.svg" alt="Historial">
+            <span>Historial</span>
+        </a>
+        <a href="/tecnico/ganancias" class="nav-item">
+            <img src="img/icon_money.svg" alt="Ganancias">
+            <span>Ganancias</span>
+        </a>
+        <a href="/tecnico/perfil" class="nav-item">
+            <img src="img/icon_profile.svg" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <script src="panel_tecnico.js"></script>
+    <script src="notificaciones.js"></script>
+</body>
+</html>

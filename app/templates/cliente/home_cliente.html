@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1A2332">
+    <title>ServiPlus - Tu servicio, donde lo necesites</title>
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/home_cliente.css">
+    <link rel="manifest" href="/static/manifest.json">
+</head>
+<body>
+    <!-- Header Top Fijo -->
+    <header class="header-top">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-icon">🔧</div>
+                <span class="logo-text">ServiPlus</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" onclick="abrirNotificaciones()">
+                    <span class="icon">🔔</span>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-avatar" onclick="abrirPerfil()">
+                    <span>JD</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        
+        <!-- Video Hero Section -->
+        <!-- Hero Section con Gradiente Animado -->
+        <section class="hero-animated">
+            <div class="hero-background">
+                <!-- Gradiente animado de fondo -->
+                <div class="gradient-layer layer-1"></div>
+                <div class="gradient-layer layer-2"></div>
+                <div class="gradient-layer layer-3"></div>
+                
+                <!-- Partículas flotantes -->
+                <div class="particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            
+            <!-- Contenido del Hero -->
+            <div class="hero-content">
+                <!-- Animación de iconos -->
+                <div class="icon-animation">
+                    <div class="icon-circle active" data-step="1">
+                        <span class="icon">📱</span>
+                    </div>
+                    <div class="icon-line"></div>
+                    <div class="icon-circle" data-step="2">
+                        <span class="icon">🔍</span>
+                    </div>
+                    <div class="icon-line"></div>
+                    <div class="icon-circle" data-step="3">
+                        <span class="icon">🚀</span>
+                    </div>
+                </div>
+                
+                <!-- Texto explicativo -->
+                <div class="hero-text">
+                    <div class="hero-badge pulse">¡Nuevo en Lima!</div>
+                    <h1 class="hero-title fade-in">
+                        Servicios técnicos<br>
+                        <span class="text-gradient">a un tap de distancia</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in-delay">
+                        Conectamos profesionales verificados<br>con quienes necesitan sus servicios
+                    </p>
+                </div>
+                
+                <!-- Proceso en 3 pasos -->
+                <div class="process-steps">
+                    <div class="step" id="step1">
+                        <div class="step-number">1</div>
+                        <h3>Solicita</h3>
+                        <p>Elige el servicio que necesitas</p>
+                    </div>
+                    
+                    <div class="step" id="step2">
+                        <div class="step-number">2</div>
+                        <h3>Conecta</h3>
+                        <p>Te asignamos el profesional</p>
+                    </div>
+                    
+                    <div class="step" id="step3">
+                        <div class="step-number">3</div>
+                        <h3>Resuelve</h3>
+                        <p>Servicio en tu puerta</p>
+                    </div>
+                </div>
+                
+                <!-- Features destacadas -->
+                <div class="hero-features">
+                    <div class="hero-feature slide-in">
+                        <span class="feature-icon">✓</span>
+                        <span>Profesionales verificados</span>
+                    </div>
+                    <div class="hero-feature slide-in delay-1">
+                        <span class="feature-icon">✓</span>
+                        <span>Pago 100% seguro</span>
+                    </div>
+                    <div class="hero-feature slide-in delay-2">
+                        <span class="feature-icon">✓</span>
+                        <span>Garantía incluida</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Principal -->
+                <button class="btn-hero" onclick="scrollToServices()">
+                    Explorar servicios
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" onclick="scrollToServices()">
+                <p class="scroll-text">Revisa nuestros servicios</p>
+                <div class="arrow-bounce">↓</div>
+            </div>
+        </section>
+
+        <!-- Slider de Servicios -->
+        <section class="services-section">
+            <div class="section-header">
+                <h2>Nuestros servicios</h2>
+                <p class="section-subtitle">Profesionales verificados a tu alcance</p>
+            </div>
+
+            <div class="services-slider">
+                <div class="slider-container" id="sliderServicios">
+                    
+                    <!-- Card 1: Cambio de Aceite -->
+                    <div class="service-card-modern" onclick="irAServicio('aceite')">
+                        <div class="card-image" style="background-image: url('/static/img/services/aceite-bg.jpg');">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="discount-badge">Desde S/50</div>
+                            <h3 class="card-title">Cambio de aceite</h3>
+                            <p class="card-description">Servicio móvil • Incluye filtro</p>
+                            <div class="card-features">
+                                <span class="feature-tag">🚗 En tu domicilio</span>
+                                <span class="feature-tag">⏱️ 30-45 min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Electricidad -->
+                    <div class="service-card-modern" onclick="irAServicio('electricidad')">
+                        <div class="card-image" style="background-image: url('/static/img/services/electricidad-bg.jpg');">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="discount-badge">Desde S/80</div>
+                            <h3 class="card-title">Electricidad</h3>
+                            <p class="card-description">Instalaciones y reparaciones</p>
+                            <div class="card-features">
+                                <span class="feature-tag">⚡ Diagnóstico incluido</span>
+                                <span class="feature-tag">✅ Certificado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Gasfitería -->
+                    <div class="service-card-modern" onclick="irAServicio('gasfiteria')">
+                        <div class="card-image" style="background-image: url('/static/img/services/gasfiteria-bg.jpg');">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="discount-badge">Desde S/70</div>
+                            <h3 class="card-title">Gasfitería</h3>
+                            <p class="card-description">Reparaciones e instalaciones</p>
+                            <div class="card-features">
+                                <span class="feature-tag">💧 Urgencias 24/7</span>
+                                <span class="feature-tag">🔧 Garantizado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Electrodomésticos -->
+                    <div class="service-card-modern" onclick="irAServicio('electrodomesticos')">
+                        <div class="card-image" style="background-image: url('/static/img/services/electro-bg.jpg');">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="discount-badge">Desde S/90</div>
+                            <h3 class="card-title">Electrodomésticos</h3>
+                            <p class="card-description">Reparación especializada</p>
+                            <div class="card-features">
+                                <span class="feature-tag">📺 Todo artefacto</span>
+                                <span class="feature-tag">🛡️ Garantía 30 días</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Indicadores de slider -->
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p class="section-subtitle">Miles de servicios realizados con éxito</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonio 1: Video -->
+                <div class="testimonial-card video-testimonial">
+                    <div class="video-thumbnail" onclick="reproducirTestimonio(1)">
+                        <img src="/static/img/testimonials/thumb1.jpg" alt="Testimonio María">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="testimonial-info">
+                        <div class="testimonial-avatar">
+                            <img src="/static/img/avatars/maria.jpg" alt="María López">
+                        </div>
+                        <div>
+                            <h4>María López</h4>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2: Texto -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Excelente servicio. El mecánico llegó puntual y cambió el aceite en mi casa. Muy profesional."</p>
+                    </div>
+                    <div class="testimonial-info">
+                        <div class="testimonial-avatar">
+                            <img src="/static/img/avatars/carlos.jpg" alt="Carlos Ruiz">
+                        </div>
+                        <div>
+                            <h4>Carlos Ruiz</h4>
+                            <p class="testimonial-service">Cambio de aceite</p>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3: Texto -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Resolvieron mi problema eléctrico en menos de 2 horas. Súper recomendado, volveré a usar el servicio."</p>
+                    </div>
+                    <div class="testimonial-info">
+                        <div class="testimonial-avatar">
+                            <img src="/static/img/avatars/ana.jpg" alt="Ana Fernández">
+                        </div>
+                        <div>
+                            <h4>Ana Fernández</h4>
+                            <p class="testimonial-service">Electricidad</p>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestros Técnicos -->
+        <section class="technicians-section">
+            <div class="section-header">
+                <h2>Técnicos certificados</h2>
+                <p class="section-subtitle">Profesionales con experiencia comprobada</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <h3>Verificados</h3>
+                    <p>Antecedentes penales y certificados validados</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Capacitados</h3>
+                    <p>Formación técnica continua y actualizada</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Calificados</h3>
+                    <p>Evaluados por cada servicio realizado</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Asegurados</h3>
+                    <p>Cobertura de seguro en cada trabajo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Garantías y Políticas -->
+        <section class="policies-section">
+            <div class="policy-card" onclick="abrirPolitica('garantias')">
+                <div class="policy-icon">🛡️</div>
+                <div class="policy-content">
+                    <h3>Garantía de servicio</h3>
+                    <p>30 días en todos nuestros servicios</p>
+                    <span class="link-arrow">Ver detalles →</span>
+                </div>
+            </div>
+
+            <div class="policy-card" onclick="abrirPolitica('devoluciones')">
+                <div class="policy-icon">↩️</div>
+                <div class="policy-content">
+                    <h3>Política de devoluciones</h3>
+                    <p>Reembolso si no quedas satisfecho</p>
+                    <span class="link-arrow">Conoce más →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number" data-target="2500">0</div>
+                <div class="stat-label">Servicios realizados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Técnicos activos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">% Satisfacción</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation Fijo -->
+    <nav class="bottom-nav">
+        <a href="/cliente/home" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Inicio</span>
+        </a>
+        <a href="/cliente/servicios" class="nav-item">
+            <span class="nav-icon">🛠️</span>
+            <span class="nav-label">Servicios</span>
+        </a>
+        <a href="/cliente/historial" class="nav-item">
+            <span class="nav-icon">📋</span>
+            <span class="nav-label">Historial</span>
+        </a>
+        <a href="/cliente/perfil" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/home_cliente.js"></script>
+</body>
+</html>
