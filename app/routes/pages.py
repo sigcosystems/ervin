@@ -23,9 +23,11 @@ async def login_cliente(request: Request):
 async def home_cliente(request: Request):
     return templates.TemplateResponse("cliente/home_cliente.html", {"request": request})
 
+"""
 @router.get("/cliente/servicio/aceite", response_class=HTMLResponse)
 async def solicitud_aceite(request: Request):
     return templates.TemplateResponse("cliente/solicitud_aceite.html", {"request": request})
+"""
 
 @router.get("/cliente/buscando", response_class=HTMLResponse)
 async def buscando_tecnico(request: Request):
@@ -96,4 +98,5 @@ async def home_cliente_v3(request: Request):
 # ========== SUSTENTO DE LOS 3 DISEÑOS PROPUESTOS ==========
 @router.get("/presentacion", response_class=HTMLResponse)
 async def presentacion_cliente(request: Request):
+
     return templates.TemplateResponse("presentacion/presentacion_cliente.html", {"request": request})
