@@ -2,15 +2,15 @@ from pydantic_settings import BaseSettings
 from typing import Optional
 
 class Settings(BaseSettings):
-    # Database
-    DATABASE_URL: str
+    # Database - OBLIGATORIO para PostgreSQL
+    DATABASE_URL: str  # Sin valor por defecto, debe venir de Railway
     
     # Security
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
-    # APIs Externas (hacerlas opcionales)
+    # APIs Externas
     RENIEC_API_URL: str = "https://api.apis.net.pe/v2/reniec/dni"
     RENIEC_API_TOKEN: str = "token-desarrollo"
     
@@ -26,14 +26,14 @@ class Settings(BaseSettings):
     GOOGLE_MAPS_API_KEY: Optional[str] = None
     
     # Environment
-    ENVIRONMENT: str = "development"
-    DEBUG: bool = True
-    PORT: int = 1010
+    ENVIRONMENT: str = "production"
+    DEBUG: bool = False
+    PORT: int = 8000
     HOST: str = "0.0.0.0"
     
     # URLs
-    FRONTEND_URL: str = "http://localhost:1010"
-    BACKEND_URL: str = "http://localhost:1010/api"
+    FRONTEND_URL: str = "https://tu-subdominio.up.railway.app"
+    BACKEND_URL: str = "https://tu-subdominio.up.railway.app/api"
     
     # Comisiones
     COMISION_CAMBIO_ACEITE: float = 50.0
