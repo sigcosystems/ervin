@@ -63,6 +63,26 @@ async def panel_proveedor(request: Request):
     return templates.TemplateResponse("proveedor/panel_proveedor.html", {"request": request})
 
 
+# ========== SERVICIOS CLIENTE ==========
+@router.get("/cliente/servicio/{tipo}", response_class=HTMLResponse)
+async def solicitar_servicio(request: Request, tipo: str):
+    # Validar tipo de servicio
+    servicios_validos = ['aceite', 'electricidad', 'gasfiteria', 'electrodomesticos']
+    
+    if tipo not in servicios_validos:
+        return templates.TemplateResponse("errors/404.html", {"request": request}, status_code=404)
+    
+    return templates.TemplateResponse("cliente/solicitud_servicio.html", {
+        "request": request,
+        "tipo_servicio": tipo
+    })
+
+@router.get("/cliente/seguimiento", response_class=HTMLResponse)
+async def seguimiento_servicio(request: Request):
+    return templates.TemplateResponse("cliente/seguimiento.html", {"request": request})
+
+
+
 # ========== VERSION 2 - CLIENTE ==========
 @router.get("/cliente/home-v2", response_class=HTMLResponse)
 async def home_cliente_v2(request: Request):
@@ -72,3 +92,8 @@ async def home_cliente_v2(request: Request):
 @router.get("/cliente/home-v3", response_class=HTMLResponse)
 async def home_cliente_v3(request: Request):
     return templates.TemplateResponse("cliente/home_cliente_v3.html", {"request": request})
+
+# ========== SUSTENTO DE LOS 3 DISEÑOS PROPUESTOS ==========
+@router.get("/presentacion", response_class=HTMLResponse)
+async def presentacion_cliente(request: Request):
+    return templates.TemplateResponse("presentacion/presentacion_cliente.html", {"request": request})
